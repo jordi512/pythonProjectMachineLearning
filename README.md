@@ -2,7 +2,27 @@
 
 In this git, is programmed a Machine learning API using python as the main language, with some interactions with Mariadb for the Login and usage of jwt for the cookies.
 
+First of all is important to download Mariadb or the database you prefer. To change the DB parameters, you have to go to the "user.py" file.
 
+### MariaDB configuration:
+
+    > mariadb
+    MariaDB [(none)]> CREATE DATABASE python;
+    MariaDB [(none)]> USE python;
+    MariaDB [python]> CREATE TABLE login (
+    ->   user VARCHAR(255) NOT NULL,
+    ->   password VARCHAR(255) NOT NULL
+    -> );
+
+    MariaDB [python]> ALTER TABLE login ADD PRIMARY KEY (user);
+
+    MariaDB [python]> ALTER TABLE login MODIFY COLUMN password VARCHAR(60) NOT NULL;
+
+    MariaDB [python]> INSERT INTO login (user, password) VALUES ('Jordi', 'Jordi');
+
+    MariaDB [python]> ALTER USER 'root'@'localhost' IDENTIFIED BY 'nueva_contraseña';
+
+    MariaDB [python]> FLUSH PRIVILEGES;
 
 ### You need to enter to the folder where the project is located and open the terminal and execute:
 
