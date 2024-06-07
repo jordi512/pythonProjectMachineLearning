@@ -1,6 +1,6 @@
 # ML API
 
-In this git, is programmed a Machine learning API using python as the main language, with some interactions with Mariadb for the Login and usage of jwt for the cookies.
+In this git, is programmed a Machine learning API using python as the main language, with some interactions with Mariadb for the Login and usage of jwt for the cookies. It is also available a Docker file to facilitate the download of all the python libraries and a pdf explaining the main code.
 
 First of all is important to download Mariadb or the database you prefer. To change the DB parameters, you have to go to the "user.py" file.
 

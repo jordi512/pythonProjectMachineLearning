@@ -25,8 +25,11 @@ async def login(username: str, password: str):
 @app.get("/viewDataSet")
 async def viewDataSet(dataset):
     if verify_signature():
-        data = pd.read_csv('./datasets/' + dataset + '.csv')
-        return data
+        try:
+            data = pd.read_csv('./datasets/' + dataset + '.csv')
+            return data
+        except FileNotFoundError:
+            raise HTTPException(status_code=404, detail=f"Dataset '{dataset}.csv' not found")
     else:
         return {"error": "Invalid token"}
 
