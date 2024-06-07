@@ -1,3 +1,9 @@
+# ML API
+
+In this git, is programmed a Machine learning API using python as the main language, with some interactions with Mariadb for the Login and usage of jwt for the cookies.
+
+
+
 ### You need to enter to the folder where the project is located and open the terminal and execute:
 
 
