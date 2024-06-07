@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="518536c2-d1bc-4d00-95e9-dd753f7e6e51" name="Changes" comment="Introduction of data">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="518536c2-d1bc-4d00-95e9-dd753f7e6e51" name="Changes" comment="Error control and readability changes">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -58,6 +59,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Docker",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717673575512</updated>
-      <workItem from="1717673578375" duration="10461000" />
+      <workItem from="1717673578375" duration="31434000" />
     </task>
     <task id="LOCAL-00001" summary="Introduction of data">
       <option name="closed" value="true" />
@@ -87,15 +89,128 @@
       <option name="project" value="LOCAL" />
       <updated>1717690530850</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Introduction of data">
+      <option name="closed" value="true" />
+      <created>1717703040945</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717703040945</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Introduction of data">
+      <option name="closed" value="true" />
+      <created>1717703205553</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717703205553</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Introduction of data">
+      <option name="closed" value="true" />
+      <created>1717703216146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717703216146</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Relative paths and choose model name">
+      <option name="closed" value="true" />
+      <created>1717742254510</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717742254510</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Relative paths and choose model name">
+      <option name="closed" value="true" />
+      <created>1717742288154</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717742288154</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Relative paths and choose model name">
+      <option name="closed" value="true" />
+      <created>1717742295773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717742295773</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Relativation of the columns">
+      <option name="closed" value="true" />
+      <created>1717743492329</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717743492329</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Minor changes related to readability">
+      <option name="closed" value="true" />
+      <created>1717743933719</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717743933719</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Minor changes related to readability">
+      <option name="closed" value="true" />
+      <created>1717743942587</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717743942587</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Students examples added">
+      <option name="closed" value="true" />
+      <created>1717752118802</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717752118802</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Students examples added">
+      <option name="closed" value="true" />
+      <created>1717752130248</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717752130248</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Error control and readability changes">
+      <option name="closed" value="true" />
+      <created>1717769193301</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717769193301</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Introduction of data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduction of data" />
+    <MESSAGE value="Relative paths and choose model name" />
+    <MESSAGE value="Relativation of the columns" />
+    <MESSAGE value="Minor changes related to readability" />
+    <MESSAGE value="Students examples added" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="Error control and readability changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error control and readability changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProjectMachineLearning$main.coverage" NAME="main Coverage Results" MODIFIED="1717675454986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
