@@ -4,13 +4,12 @@ from sklearn import linear_model
 import joblib
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-
 from jwt import create_access_token, verify_signature
 from user import authenticate_user
 
 app = FastAPI()
 
-
+# Endpoint for login inside the API
 @app.post("/login")
 async def login(username: str, password: str):
     user = authenticate_user(username, password)
@@ -22,6 +21,7 @@ async def login(username: str, password: str):
     return {"access_token": "Logged correctly, you have 30 minutes"}
 
 
+# Endpoint for viewing the data of the datasets
 @app.get("/viewDataSet")
 async def viewDataSet(dataset):
     if verify_signature():
