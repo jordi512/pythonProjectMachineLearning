@@ -36,7 +36,10 @@ First of all is important to download Mariadb or the database you prefer. To cha
     # curl -X POST "http://localhost:8000/login?username=Jordi&password=Jordi" 
 
 
-### Then in another tab execute the following command for introducing data to the machine learning:
+### Then you can start making the machine learning models or seeing the datasets that are inside the folder "datasets":
+
+
+    # curl -X GET "http://localhost:8000/viewDataSet?dataset=IRIS" 
 
 
     # curl -X POST "http://localhost:8000/train?dataset=IRIS&model_name=IRIS"
