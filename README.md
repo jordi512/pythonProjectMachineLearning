@@ -9,7 +9,7 @@ First of all is important to download Mariadb or the database you prefer. To cha
     # docker build -t simple_app .
 
 
-### MariaDB configuration:
+### MariaDB configuration (in last version MongoDB is implemented):
 
     # mariadb
     MariaDB [(none)]> CREATE DATABASE python;
