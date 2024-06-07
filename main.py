@@ -9,9 +9,9 @@ app = FastAPI()
 @app.post("/train")
 def train_model(dataset, model_name):
     data = pd.read_csv('./datasets/'+dataset+'.csv')
-    print(data.head())
-    X = data[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
-    Y = data['species']
+    print("headers: ", data.columns[:-1])
+    X = data[data.columns[:-1]] #all the columns without the last one
+    Y = data[data.columns[-1]] #the last one column
     clf = linear_model.SGDClassifier(max_iter=1000, tol=1e-3)
     clf.fit(X, Y)
     joblib.dump(clf, './models/'+model_name+'.pkl')
