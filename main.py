@@ -183,16 +183,36 @@ def predict(model_name: str,
 
 # Endpoint for prediction using IRIS model with error handling
 @app.post("/predictWine")
-def predict(model_name, fixed_acidity: float, volatile_acidity: float, citric_acid: float, residual_sugar: float,
-                    chlorides: float, free_sulfur_dioxide: float, total_sulfur_dioxide: float, density: float,
-             pH: float, sulphates: float, alcohol: float, quality: float):
+def predict(model_name, fixed_acidity: float,
+            volatile_acidity: float,
+            citric_acid: float,
+            residual_sugar: float,
+            chlorides: float,
+            free_sulfur_dioxide: float,
+            total_sulfur_dioxide: float,
+            density: float,
+            pH: float,
+            sulphates: float,
+            alcohol: float,
+            quality: float):
     if verify_signature():
         try:
             # Load the pre-trained model
             lr = joblib.load('./models/' + model_name + '.pkl')
 
             # Make prediction on the input features
-            result = lr.predict([[fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol, quality]])[0]
+            result = lr.predict([[fixed_acidity,
+                                  volatile_acidity,
+                                  citric_acid,
+                                  residual_sugar,
+                                  chlorides,
+                                  free_sulfur_dioxide,
+                                  total_sulfur_dioxide,
+                                  density,
+                                  pH,
+                                  sulphates,
+                                  alcohol,
+                                  quality]])[0]
             return {'prediction': result}
 
         except FileNotFoundError:

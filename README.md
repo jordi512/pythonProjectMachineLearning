@@ -4,6 +4,11 @@ In this git, is programmed a Machine learning API using python as the main langu
 
 First of all is important to download Mariadb or the database you prefer. To change the DB parameters, you have to go to the "user.py" file.
 
+### Dockerfile
+
+    # docker build -t simple_app .
+
+
 ### MariaDB configuration:
 
     # mariadb

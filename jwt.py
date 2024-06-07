@@ -3,9 +3,9 @@ from base64 import urlsafe_b64encode, urlsafe_b64decode
 import hashlib
 import hmac
 
-SECRET_KEY = "VERVERY_HARD_KEY256"  # Replace with a strong, environment-specific secret
+SECRET_KEY = "VERVERY_HARD_KEY256"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30  # Adjust token expiration time as needed
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 def create_header(alg="HS256"):

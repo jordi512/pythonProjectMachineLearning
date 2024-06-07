@@ -1,9 +1,11 @@
+import pymongo
 from passlib.context import CryptContext
 import mariadb
 import sys
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+#DEPRECATED
 class User:
     username: str
     hashed_password: str
@@ -12,7 +14,8 @@ class User:
         return pwd_context.verify(plain_password, self.hashed_password)
 
 
-def authenticate_user(username: str, password: str) -> User:
+#DEPRECATED
+def authenticate_user_mariadb(username: str, password: str) -> User:
     # Implement user database lookup and password verification using 'verify_password'
 
     # Connect to MariaDB Platform
@@ -32,16 +35,32 @@ def authenticate_user(username: str, password: str) -> User:
     # Get Cursor
     cur = conn.cursor()
 
-    # Ejecutar consulta
+    #Execute SQL
     cur.execute("SELECT * from login WHERE user = %s", (username,))
 
-    # Recuperar resultados
+    #See results
     resultados = cur.fetchall()
     encontrado = False
     for usuario, passw in resultados:
         if username == usuario and password == passw: encontrado = True
 
-    # Cerrar la conexión
+    #Close connection
     conn.close()
 
     return encontrado
+
+
+def authenticate_user(username: str, password: str) -> bool:
+    # Connect and access to mongodb database
+    client = pymongo.MongoClient("mongodb://localhost:27017")
+    db = client["python"]
+    collection = db["user"]
+
+    #Find in the database
+    documento = collection.find_one({"username": username, "password": password})
+
+    # Verify if the user exists
+    if documento is not None:
+        return True
+    else:
+        return False
