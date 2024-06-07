@@ -3,6 +3,13 @@
 
     > uvicorn main:app --reload
 
+    
+### You need to login with your user and your password and ensure that Mariadb is running:
+
+
+    > curl -X POST "http://localhost:8000/login?username=Jordi&password=Jordi" 
+
+
 ### Then in another tab execute the following command for introducing data to the machine learning:
 
 
