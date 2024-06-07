@@ -2,6 +2,8 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from sklearn import linear_model
 import joblib
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
 
 from jwt import create_access_token, verify_signature
 from user import authenticate_user
@@ -28,13 +30,21 @@ def train_model(dataset, model_name):
             # Load the CSV dataset
             data = pd.read_csv('./datasets/' + dataset + '.csv')
 
+            # Create the imputer (replace with appropriate strategy if needed)
+            imputer = SimpleImputer(strategy="mean")  # Replace strategy with "median", "most_frequent", etc.
+
+            # Create the classifier
+            clf = linear_model.SGDClassifier(max_iter=10000, tol=1e-3)
+
+            # Combine imputer and classifier in a pipeline
+            pipeline = Pipeline([("imputer", imputer), ("sgd", clf)])
+
             # Separate features and target variable
             x = data[data.columns[:-1]]
             y = data[data.columns[-1]]
 
-            # Create and train the model
-            clf = linear_model.SGDClassifier(max_iter=10000, tol=1e-3)
-            clf.fit(x, y)
+            # Train the model
+            pipeline.fit(x, y)
 
             # Save the trained model
             joblib.dump(clf, './models/' + model_name + '.pkl')
@@ -150,6 +160,28 @@ def predict(model_name: str,
                                   Unemployment_rate,
                                   Inflation_rate,
                                   GDP]])[0]
+            return {'prediction': result}
+
+        except FileNotFoundError:
+            raise HTTPException(status_code=404, detail=f"Model '{model_name}.pkl' not found")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"An error occurred during prediction: {str(e)}")
+    else:
+        return {"error": "Invalid token"}
+
+
+# Endpoint for prediction using IRIS model with error handling
+@app.post("/predictWine")
+def predict(model_name, fixed_acidity: float, volatile_acidity: float, citric_acid: float, residual_sugar: float,
+                    chlorides: float, free_sulfur_dioxide: float, total_sulfur_dioxide: float, density: float,
+             pH: float, sulphates: float, alcohol: float, quality: float):
+    if verify_signature():
+        try:
+            # Load the pre-trained model
+            lr = joblib.load('./models/' + model_name + '.pkl')
+
+            # Make prediction on the input features
+            result = lr.predict([[fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol, quality]])[0]
             return {'prediction': result}
 
         except FileNotFoundError:
