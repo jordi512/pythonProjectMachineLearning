@@ -1,6 +1,5 @@
 import json
-from datetime import datetime, timedelta
-from base64 import b64encode, urlsafe_b64encode, urlsafe_b64decode
+from base64 import urlsafe_b64encode, urlsafe_b64decode
 import hashlib
 import hmac
 

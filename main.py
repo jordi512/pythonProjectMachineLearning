@@ -22,6 +22,14 @@ async def login(username: str, password: str):
     return {"access_token": "Logged correctly, you have 30 minutes"}
 
 
+@app.get("/viewDataSet")
+async def viewDataSet(dataset):
+    if verify_signature():
+        data = pd.read_csv('./datasets/' + dataset + '.csv')
+        return data
+    else:
+        return {"error": "Invalid token"}
+
 # Endpoint for model training with error handling
 @app.post("/train")
 def train_model(dataset, model_name):
